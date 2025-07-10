@@ -1,25 +1,52 @@
 {
-  "name": "fluent-chat-widget",
+  "name": "@fluent/chat-widget",
   "description": "A chat widget that seamlessly integrates with any website to capture and manage customer conversations through the Fluent CRM.",
   "version": "1.0.0",
   "author": {
     "name": "Danick Gevry",
     "url": "https://github.com/danickgevry"
   },
-  "private": true,
-  "type": "module",
+  "main": "dist/fluent-widget.js",
+  "module": "dist/fluent-widget.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "docs",
+    "examples"
+  ],
   "scripts": {
     "build": "nuxt build",
+    "build:widget": "node scripts/build.js",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "release": "node scripts/release.js",
+    "docs:build": "nuxt generate",
+    "playground": "serve playground --port 3001",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "nuxt typecheck",
     "shadcn:add": "pnpm dlx shadcn-vue@latest add %COMPONENT%",
     "shadcn:add:mac": "pnpm dlx shadcn-vue@latest add $COMPONENT"
   },
+  "keywords": [
+    "chat",
+    "widget",
+    "customer-support",
+    "conversation",
+    "embed"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monkeylab-io/fluent-chat-widget.git"
+  },
+  "bugs": {
+    "url": "https://github.com/monkeylab-io/fluent-chat-widget/issues"
+  },
+  "homepage": "https://fluent.ai",
   "dependencies": {
     "@nuxt/eslint": "1.5.2",
     "@tailwindcss/vite": "^4.1.11",
@@ -41,6 +68,9 @@
     "@iconify/vue": "^5.0.0",
     "@nuxt/eslint-config": "^1.5.2",
     "@nuxtjs/color-mode": "^3.5.2",
-    "eslint": "^9.30.1"
+    "@testing-library/vue": "^8.1.0",
+    "eslint": "^9.30.1",
+    "playwright": "^1.53.2",
+    "vitest": "^3.2.4"
   }
 }

@@ -20,13 +20,41 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
 
+  runtimeConfig: {
+    public: {
+      apiUrl: process.env.FLUENT_API_URL || 'https://api.fluent.ai',
+      cdnUrl: process.env.FLUENT_CDN_URL || 'https://cdn.fluent.ai',
+      version: process.env.npm_package_version
+    }
+  },
+
+  devServer: {
+    port: 3001
+  },
+
   future: { compatibilityVersion: 4 },
   compatibilityDate: '2025-05-15',
+
+  nitro: {
+    output: {
+      dir: 'dist'
+    }
+  },
 
   vite: {
     plugins: [
       tailwindcss()
-    ]
+    ],
+    build: {
+      rollupOptions: {
+        external: [],
+        output: {
+          format: 'iife',
+          name: 'FluentChatWidget',
+          globals: {}
+        }
+      }
+    }
   },
 
   typescript: { shim: false },
