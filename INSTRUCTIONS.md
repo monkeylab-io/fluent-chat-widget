@@ -67,8 +67,6 @@ fluent-chat-widget/
 │   ├── build.js                     # Custom build script for multiple formats
 │   ├── deploy.js                    # CDN deployment automation
 │   └── release.js                   # Version management and release
-├── playground/
-│   └── index.html                   # Development testing environment
 ├── examples/                        # Integration examples
 │   ├── basic-integration/
 │   ├── wordpress/
@@ -183,7 +181,7 @@ https://cdn.fluent.ai/widget/
 ```bash
 npm run build:widget        # Build all formats
 npm run build -- --docs     # Include documentation
-npm run playground          # Start development playground
+npm run dev                  # Start development server with test page
 npm run release             # Version bump and deploy
 ```
 
@@ -224,15 +222,15 @@ interface SendMessageResponse {
 
 ### Local Development
 1. **Start Nuxt dev server:** `npm run dev`
-2. **Use playground:** `npm run playground` for testing
-3. **Build and test:** `npm run build:widget` then test in playground
-4. **Mock API responses:** Playground includes AI response simulation
+2. **Visit test page:** `http://localhost:3001` for widget testing
+3. **Build and test:** `npm run build:widget` then test integration
+4. **Mock API responses:** Test page includes simulated bot responses
 
 ### Testing Strategy
 - **Unit tests:** Component testing with Vue Testing Library
 - **Integration tests:** API communication and WebSocket functionality
 - **E2E tests:** Cross-browser testing with real website integration
-- **Playground testing:** Interactive development environment
+- **Development testing:** Realistic e-commerce demo site at `http://localhost:3001`
 
 ### Code Quality
 - **TypeScript:** Comprehensive typing throughout
@@ -458,9 +456,9 @@ When starting work on this project:
 
 1. **Understand the philosophy:** This is conversation-first, not traditional support chat
 2. **Review the types:** `app/types/widget.ts` contains the complete data model
-3. **Check the playground:** `playground/index.html` for interactive testing
+3. **Test the widget:** Visit `http://localhost:3001` after running `npm run dev`
 4. **Examine the entry point:** `app/widget.ts` for architecture understanding
-5. **Build and test:** `npm run build:widget && npm run playground`
+5. **Build and test:** `npm run build:widget` for production builds
 6. **Read the main CRM docs:** Understand the broader Fluent ecosystem
 
 The widget must feel like a natural extension of human conversation, not a mechanical support tool. Every feature should enhance the conversational experience while maintaining the technical excellence expected from a modern web component.
