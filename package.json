@@ -1,0 +1,46 @@
+{
+  "name": "fluent-chat-widget",
+  "description": "A chat widget that seamlessly integrates with any website to capture and manage customer conversations through the Fluent CRM.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Danick Gevry",
+    "url": "https://github.com/danickgevry"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "nuxt typecheck",
+    "shadcn:add": "pnpm dlx shadcn-vue@latest add %COMPONENT%",
+    "shadcn:add:mac": "pnpm dlx shadcn-vue@latest add $COMPONENT"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "1.5.2",
+    "@tailwindcss/vite": "^4.1.11",
+    "@vueuse/core": "^13.5.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-vue-next": "^0.525.0",
+    "nuxt": "^3.17.6",
+    "reka-ui": "^2.3.2",
+    "shadcn-nuxt": "2.2.0",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.5",
+    "vue": "^3.5.17",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@iconify-json/radix-icons": "^1.2.2",
+    "@iconify/vue": "^5.0.0",
+    "@nuxt/eslint-config": "^1.5.2",
+    "@nuxtjs/color-mode": "^3.5.2",
+    "eslint": "^9.30.1"
+  }
+}
